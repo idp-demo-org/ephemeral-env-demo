@@ -16,3 +16,13 @@ containers:
     image: . # Set by pipeline
     variables:
       MESSAGE: "Hello deployer!"
+
+resources:
+  dns: # We need a DNS record to point to the service 
+    type: dns
+  route:
+    type: route
+    params:
+      host: ${resources.dns.host}
+      path: /
+      port: 8080
