@@ -14,7 +14,8 @@ service:
 containers:
   demo:
     image: . # Set by pipeline
-    variables: "Hello without any bucket!"
+    variables: 
+      MESSAGE: "Hello without any bucket!"
 
 resources:
   dns: # We need a DNS record to point to the service 
