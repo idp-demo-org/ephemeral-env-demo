@@ -14,8 +14,7 @@ service:
 containers:
   demo:
     image: . # Set by pipeline
-    variables:
-      MESSAGE: "My Bucket in ${resources.my-bucket.region}: ${resources.my-bucket.bucket}"
+    variables: "Hello without any bucket!"
 
 resources:
   dns: # We need a DNS record to point to the service 
@@ -26,6 +25,4 @@ resources:
       host: ${resources.dns.host}
       path: /
       port: 8080
-  my-bucket:
-    type: s3
 
