@@ -15,7 +15,7 @@ containers:
   demo:
     image: . # Set by pipeline
     variables: 
-      MESSAGE: "Hello Cloud & Security Day!"
+      MESSAGE: "Bucket ${resources.s3.bucket} is located in ${resources.s3.region}"
 
 resources:
   dns: # We need a DNS record to point to the service 
